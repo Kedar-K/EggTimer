@@ -23,18 +23,30 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9S4-l0-41N" userLabel="Title View">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="245.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you like your eggs?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="XLm-5r-pSP" userLabel="Title Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="245.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="21S-jc-mRQ">
+                                                <rect key="frame" x="62.5" y="98.5" width="249.5" height="48"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you like your eggs?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="XLm-5r-pSP" userLabel="Title Label">
+                                                        <rect key="frame" x="0.0" y="0.0" width="249.5" height="25.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the egg to start timer." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONy-Yx-xsX" userLabel="Caption">
+                                                        <rect key="frame" x="43.5" y="33.5" width="162" height="14.5"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ONy-Yx-xsX" firstAttribute="top" secondItem="XLm-5r-pSP" secondAttribute="bottom" constant="10" id="mut-cL-ftb"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="XLm-5r-pSP" firstAttribute="leading" secondItem="9S4-l0-41N" secondAttribute="leading" id="6V5-9S-ChY"/>
-                                            <constraint firstAttribute="bottom" secondItem="XLm-5r-pSP" secondAttribute="bottom" id="OKF-nB-MRE"/>
-                                            <constraint firstItem="XLm-5r-pSP" firstAttribute="top" secondItem="9S4-l0-41N" secondAttribute="top" id="uBu-O3-A6x"/>
-                                            <constraint firstAttribute="trailing" secondItem="XLm-5r-pSP" secondAttribute="trailing" id="yP9-jE-EGL"/>
+                                            <constraint firstItem="21S-jc-mRQ" firstAttribute="centerY" secondItem="9S4-l0-41N" secondAttribute="centerY" id="cLc-N3-i1e"/>
+                                            <constraint firstItem="21S-jc-mRQ" firstAttribute="centerX" secondItem="9S4-l0-41N" secondAttribute="centerX" id="jxR-kW-kLo"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wAa-qa-eeB" userLabel="Egg Stack View">
@@ -110,10 +122,11 @@
                                                 <constraints>
                                                     <constraint firstItem="NEu-V5-iHi" firstAttribute="leading" secondItem="SGU-B2-GCH" secondAttribute="leading" id="0lb-vV-Kxn"/>
                                                     <constraint firstItem="60f-lw-4Iu" firstAttribute="leading" secondItem="SGU-B2-GCH" secondAttribute="leading" id="1ou-vw-cE0"/>
+                                                    <constraint firstItem="60f-lw-4Iu" firstAttribute="centerY" secondItem="SGU-B2-GCH" secondAttribute="centerY" id="2Gv-iZ-dIA"/>
                                                     <constraint firstItem="NEu-V5-iHi" firstAttribute="top" secondItem="SGU-B2-GCH" secondAttribute="top" id="5q8-G2-AhV"/>
                                                     <constraint firstAttribute="trailing" secondItem="60f-lw-4Iu" secondAttribute="trailing" id="CGA-j4-lqY"/>
                                                     <constraint firstAttribute="bottom" secondItem="NEu-V5-iHi" secondAttribute="bottom" id="Dy7-Wh-nWb"/>
-                                                    <constraint firstAttribute="bottom" secondItem="60f-lw-4Iu" secondAttribute="bottom" id="gNd-4G-NV1"/>
+                                                    <constraint firstItem="60f-lw-4Iu" firstAttribute="centerX" secondItem="SGU-B2-GCH" secondAttribute="centerX" id="KP6-yt-Kz1"/>
                                                     <constraint firstItem="60f-lw-4Iu" firstAttribute="top" secondItem="SGU-B2-GCH" secondAttribute="top" id="kDf-aZ-4ZZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="NEu-V5-iHi" secondAttribute="trailing" id="xcW-Uv-gNH"/>
                                                 </constraints>
@@ -123,36 +136,41 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-th-c5K" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="568.5" width="374" height="245.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0k-us-e4s">
-                                                <rect key="frame" x="129" y="8" width="122" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-rc-PoV">
-                                                <rect key="frame" x="174" y="100" width="26" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93M-uv-NJ0">
-                                                <rect key="frame" x="134" y="128" width="107" height="35"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" systemColor="systemRedColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="reset timer"/>
-                                                <connections>
-                                                    <action selector="resetTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BtX-r2-if5"/>
-                                                </connections>
-                                            </button>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SEF-QV-mcP">
-                                                <rect key="frame" x="88" y="75" width="199" height="4"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" systemColor="systemYellowColor"/>
-                                            </progressView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="9Ok-L8-Y3l">
+                                                <rect key="frame" x="69" y="47.5" width="236" height="151"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0k-us-e4s">
+                                                        <rect key="frame" x="57.5" y="0.0" width="121.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:0" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-rc-PoV">
+                                                        <rect key="frame" x="105" y="44.5" width="26" height="20"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SEF-QV-mcP">
+                                                        <rect key="frame" x="0.0" y="88.5" width="236" height="4"/>
+                                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                                    </progressView>
+                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93M-uv-NJ0">
+                                                        <rect key="frame" x="65" y="116.5" width="106.5" height="34.5"/>
+                                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="reset timer"/>
+                                                        <connections>
+                                                            <action selector="resetTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BtX-r2-if5"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="9Ok-L8-Y3l" firstAttribute="centerX" secondItem="nJN-th-c5K" secondAttribute="centerX" id="Ay4-cr-0qx"/>
+                                            <constraint firstItem="9Ok-L8-Y3l" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="Hdz-Zb-Taf"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>

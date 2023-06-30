@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class ViewController: UIViewController {
     
@@ -19,6 +21,7 @@ class ViewController: UIViewController {
     var timerValue: Int = 0
     var secondsRemaining: Int = 0
     var timer = Timer()
+    var player: AVAudioPlayer!
     
     
     @IBOutlet weak var resetTimerButton: UIButton!
@@ -69,6 +72,7 @@ class ViewController: UIViewController {
             secondsRemaining = timerValue - secondsPassed
 //            secondsRemaining -= 1
             secondsPassed += 1
+//            print("\((secondsRemaining % 3600) / 60 ):\((secondsRemaining % 3600) % 60)")
             timerProgress.text = "\((secondsRemaining % 3600) / 60 ):\((secondsRemaining % 3600) % 60)"
             timerProgressBar.progress = Float(secondsPassed)/Float(timerValue)
         }else{
@@ -79,6 +83,7 @@ class ViewController: UIViewController {
             timerValue = 0
             secondsRemaining = 0
             resetTimerButton.isEnabled = false
+            playSound()
             print("Done")
         }
         
@@ -95,4 +100,11 @@ class ViewController: UIViewController {
         resetTimerButton.isEnabled = false
     }
     
+    func playSound() {
+            let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+            player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
+                    
+        }
+
 }
